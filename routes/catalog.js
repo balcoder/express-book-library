@@ -1,3 +1,8 @@
+// The catalog holds all the routes for the HTTP verbs (GET, POST, PUT, DELETE,
+// etc.), which have an URL path/pattern, and a function that is called to
+// handle that pattern.The appropriate function is called from the controllers
+// folder
+
 var express = require('express');
 var router = express.Router();
 
@@ -10,7 +15,7 @@ var book_instance_controller = require('../controllers/bookinstanceController');
 /// BOOK ROUTES ///
 
 // GET catalog home page.
-router.get('/', book_controller.index);//This actually maps to /catalog/ because we import the route with a /catalog prefix
+router.get('/', book_controller.index);//This actually maps to /catalog/ because we import the route with a /catalog prefix in index.js
 
 // GET request for creating a Book. NOTE This must come before routes that display Book (uses id).
 router.get('/book/create', book_controller.book_create_get);
